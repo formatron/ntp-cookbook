@@ -1,0 +1,10 @@
+# $OpenBSD: ntpd.conf,v 1.7 2004/07/20 17:38:35 henning Exp $
+# sample ntpd configuration file, see ntpd.conf(5)
+
+# Addresses to listen on (ntpd does not listen by default)
+<% @listen_on.each do |listen_on| %>listen on <%= listen_on %>
+<% end %>
+
+# sync to servers configured in attributes
+<% @servers.each do |server| %><%= server %>
+<% end %>

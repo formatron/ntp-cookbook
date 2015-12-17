@@ -1,2 +1,3 @@
-default['formatron_filebeat']['version'] = nil
-default['formatron_filebeat']['servers'] = []
+default['formatron_ntp']['version'] = nil
+default['formatron_ntp']['servers'] = []
+default['formatron_ntp']['listen_on'] = []
