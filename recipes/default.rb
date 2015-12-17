@@ -2,12 +2,20 @@ version = node['formatron_ntp']['version']
 servers = node['formatron_ntp']['servers']
 listen_on = node['formatron_ntp']['listen_on']
 
+# purge ntp and restart apparmor if present
+# to avoid issue installing openntpd
 package 'ntp' do
-  action :remove
+  action :purge
+  notifies :restart, 'service[apparmor]', :immediately
+end
+service 'apparmor' do
+  supports status: true, restart: true, reload: false
+  ignore_failure true
+  action :nothing
 end
 
 package 'ntpdate' do
-  action :remove
+  action :purge
 end
 
 package 'openntpd' do
