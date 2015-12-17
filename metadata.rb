@@ -1,0 +1,8 @@
+name 'formatron_ntp'
+version '0.1.0'
+description 'Formatron NTP cookbook'
+maintainer 'Peter Halliday'
+maintainer_email 'pghalliday@gmail.com'
+source_url 'https://github.com/formatron/ntp-cookbook'
+issues_url 'https://github.com/formatron/ntp-cookbook/issues'
+supports 'ubuntu'
